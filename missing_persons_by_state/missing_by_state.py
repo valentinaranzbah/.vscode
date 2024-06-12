@@ -9,8 +9,10 @@ state_geo = requests.get(
     "https://raw.githubusercontent.com/python-visualization/folium-example-data/main/us_states.json"
 ).json()
 
-state_data = pandas.read_csv()
+file_path = 'missing_by_state.csv'
+state_data = pandas.read_csv(file_path)
 
+#state_data['Missing Persons'] = state_data['Missing Persons'].apply(lambda x: int(''.join(x.split(','))))
 
 m = folium.Map(location=[48, -102], zoom_start=3)
 
